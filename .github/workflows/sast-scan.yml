@@ -31,6 +31,9 @@ jobs:
           $HOME/dependency-check/dependency-check/bin/dependency-check.sh \
             --project "bitcoin" \
             --nvdApiKey ${{ secrets.WORKSHOP6_NVD_API_KEY }} \
+            --nvdApiDelay 10000 \
+            --nvdMaxRetryCount 10 \
+            --format HTML \
             --out . \
             --scan . \
             --disableOssIndex
